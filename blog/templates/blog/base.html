@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="{% static 'css/blog.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- NavBar-->
+
+    {% include 'navbar.html' %}
+
+    <!-- End NavBar-->
+
+    <div id="content">
+
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div id="sidebar">
+        {% if user.is_authenticated %}
+        <h2>Welcome {{user}}!</h2><br>
+        {% endif %}
+        <p>Happy Blogging!</p>
+    </div>
+
+
+
+</body>
+
+</html>

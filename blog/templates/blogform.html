@@ -1,0 +1,59 @@
+{% extends "blog/base.html" %}
+
+{% block title %} Write Blog
+{% endblock %}
+
+{% block content %}
+
+<h1>Write your blog</h1>
+
+<div class="blogform" id="bf">
+    <form action="" method="POST">
+
+
+        {% csrf_token %}
+        <!--
+           {% for field in form  %}
+        {{field.label}}
+        {{field}}
+        {% endfor %}
+        -->
+
+
+
+        <p>{{form.title.label}}</p>
+        {{form.title}}<br><br>
+
+        <p>{{form.slug.label}}</p>
+        {{form.slug}}<br><br>
+
+        {{form.author.label}}
+        {{form.author}}<br><br>
+
+
+        <p>{{form.body.label}}</p>
+        {{form.body}}
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        {{form.status.label}}
+        {{form.status}}
+
+        <p>{{form.STATUS_CHOICES.label}}</p>
+        {{form.STATUS_CHOICES}}
+
+        <input type="submit" value="Post">
+
+
+    </form>
+</div>
+
+
+{% endblock %}
